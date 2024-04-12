@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MaxBlogs.Application\MaxBlogs.Application.csproj" />
+    <ProjectReference Include="..\MaxBlogs.Contracts\MaxBlogs.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
