@@ -1,4 +1,5 @@
-﻿using MaxBlogs.Contracts.Blogs;
+﻿using MaxBlogs.Application.Managers.Interfaces;
+using MaxBlogs.Contracts.Blogs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaxBlogs.Api.Controllers;
@@ -8,10 +9,12 @@ namespace MaxBlogs.Api.Controllers;
 public class BlogsController : ControllerBase
 {
     private readonly ILogger<BlogsController> _logger;
+    private readonly IBlogsManager _blogsManager;
 
-    public BlogsController(ILogger<BlogsController> logger)
+    public BlogsController(ILogger<BlogsController> logger, IBlogsManager blogsManager)
     {
         _logger = logger;
+        _blogsManager = blogsManager;
     }
 
     [HttpPost]
@@ -19,7 +22,14 @@ public class BlogsController : ControllerBase
     {
         _logger.LogInformation("Recieved request to create a blog {request}", request);
 
-        await Task.Delay(100);
-        return Ok(request);
+        var result = await _blogsManager.CreateBlogAsync(request.UserId, request.Title, request.Text);
+        if (result.IsFailed)
+        {
+            return BadRequest(result.Errors.FirstOrDefault()?.Message);
+        }
+
+        var response = new CreateBlogResponse(result.Value);
+
+        return Ok(response);
     }
 }
