@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Api", "MaxBlogs.Api\MaxBlogs.Api.csproj", "{C7CFCFD1-611E-4F43-8CB8-BD9A7742B01E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Domain", "MaxBlogs.Domain\MaxBlogs.Domain.csproj", "{67CFDD00-AAA1-4AFE-9446-37036169E680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Application", "MaxBlogs.Application\MaxBlogs.Application.csproj", "{F4FA7F9A-F889-4DC8-8E46-D862C69550BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Infrastructure", "MaxBlogs.Infrastructure\MaxBlogs.Infrastructure.csproj", "{6111CD3B-B207-4C0A-B726-7612667B7A7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http calls", "http calls", "{D07CE3E8-B4BC-4E09-8BCF-9CE6A61272BE}"
+	ProjectSection(SolutionItems) = preProject
+		WeatherForecast.http = WeatherForecast.http
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D627343-BB25-4E17-B2D3-C4C0031CC269}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7CFCFD1-611E-4F43-8CB8-BD9A7742B01E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CFCFD1-611E-4F43-8CB8-BD9A7742B01E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CFCFD1-611E-4F43-8CB8-BD9A7742B01E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CFCFD1-611E-4F43-8CB8-BD9A7742B01E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CFDD00-AAA1-4AFE-9446-37036169E680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CFDD00-AAA1-4AFE-9446-37036169E680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CFDD00-AAA1-4AFE-9446-37036169E680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CFDD00-AAA1-4AFE-9446-37036169E680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4FA7F9A-F889-4DC8-8E46-D862C69550BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4FA7F9A-F889-4DC8-8E46-D862C69550BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4FA7F9A-F889-4DC8-8E46-D862C69550BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4FA7F9A-F889-4DC8-8E46-D862C69550BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6111CD3B-B207-4C0A-B726-7612667B7A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6111CD3B-B207-4C0A-B726-7612667B7A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6111CD3B-B207-4C0A-B726-7612667B7A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6111CD3B-B207-4C0A-B726-7612667B7A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F8B082C-3C05-4F52-AC03-9585AE3DA06F}
+	EndGlobalSection
+EndGlobal

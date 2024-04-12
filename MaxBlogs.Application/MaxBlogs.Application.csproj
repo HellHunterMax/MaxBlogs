@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\MaxBlogs.Domain\MaxBlogs.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
