@@ -2,7 +2,7 @@
 using AutoFixture.AutoMoq;
 using AutoFixture.Xunit2;
 
-namespace Common.UnitTests;
+namespace Common.UnitTestsC;
 
 public class AutoMoqInlineDataAttribute : InlineAutoDataAttribute
 {

@@ -1,14 +1,11 @@
 <Project>
-  <PropertyGroup Condition="!$(MSBuildProjectName.EndsWith('UnitTests'))">
+  <PropertyGroup >
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('UnitTests'))">
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <IsTestProject>true</IsTestProject>
     <IsPackable>false</IsPackable>
     <NoWarn>IDE1006</NoWarn>
