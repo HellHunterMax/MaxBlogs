@@ -9,6 +9,12 @@ public static class ModuleExtensions
     public static IServiceCollection RegisterApplicationServices(this IServiceCollection services)
     {
         services.AddScoped<IBlogsManager, BlogsManager>();
+
+        services.AddMediatR(options =>
+        {
+            options.RegisterServicesFromAssemblyContaining(typeof(ModuleExtensions));
+        });
+
         return services;
     }
 }

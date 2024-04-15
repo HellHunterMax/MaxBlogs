@@ -5,12 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MaxBlogs.Application\MaxBlogs.Application.csproj" />
     <ProjectReference Include="..\MaxBlogs.Contracts\MaxBlogs.Contracts.csproj" />
+    <ProjectReference Include="..\MaxBlogs.Infrastructure\MaxBlogs.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
