@@ -14,14 +14,15 @@ public class BlogsControllerTests
     [Theory, ControllerAutoMoqInlineDataAttribute]
     public async Task CreateBlogRequest_ValidRequest_OkGuild(
         [Frozen] Mock<ISender> _mediatorMock,
-        CreateBlog createBlogRequest,
         BlogsController sut,
         CreateBlogRequest request,
-        CreateBlogResponse expected)
+        CreateBlogResponse expected,
+        CancellationToken cancellationToken)
     {
-        _mediatorMock.Setup(x => x.Send(createBlogRequest, CancellationToken.None)).ReturnsAsync(expected.Id);
+        var createBlog = new CreateBlog(request.UserId, request.Title, request.Text);
+        _mediatorMock.Setup(x => x.Send(It.Is<CreateBlog>(x => x.UserId == request.UserId && x.Title == request.Title && x.Text == request.Text), cancellationToken)).ReturnsAsync(expected.Id);
 
-        var result = await sut.CreateBlogAsync(request, CancellationToken.None);
+        var result = await sut.CreateBlogAsync(request, cancellationToken);
 
         result.Should().BeEquivalentTo(new OkObjectResult(expected));
     }
