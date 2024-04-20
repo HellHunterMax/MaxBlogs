@@ -1,19 +1,32 @@
 ﻿using FluentResults;
-using MaxBlogs.Application.Managers.Interfaces;
+using MaxBlogs.Application.Common.Interfaces;
+using MaxBlogs.Domain.Entities;
 using MediatR;
 
 namespace MaxBlogs.Application.CQRS.Blogs.Commands.Create;
-internal class CreateBlogHandler : IRequestHandler<CreateBlog, Result<Guid>>
+internal class CreateBlogHandler : IRequestHandler<CreateBlog, Result<Blog>>
 {
-    private readonly IBlogsManager _blogsManager;
+    private readonly IBlogsRepository _blogsRepository;
+    //private readonly IUnitOfWork _unitOfWork;
 
-    public CreateBlogHandler(IBlogsManager blogsManager)
+    public CreateBlogHandler(IBlogsRepository blogsRepository)
     {
-        _blogsManager = blogsManager;
+        _blogsRepository = blogsRepository;
+        //_unitOfWork = unitOfWork;
     }
 
-    public async Task<Result<Guid>> Handle(CreateBlog request, CancellationToken cancellationToken)
+    public async Task<Result<Blog>> Handle(CreateBlog request, CancellationToken cancellationToken)
     {
-        return await _blogsManager.CreateBlogAsync(request.UserId, request.Title, request.Text);
+        var blogResult = Blog.Create(request.UserId, request.Title, request.Text);
+
+        if (blogResult.IsFailed)
+        {
+            return blogResult;
+        }
+
+        await _blogsRepository.AddBlogAsync(blogResult.Value);
+        //await _unitOfWork.CommitChangesAsync();
+
+        return blogResult;
     }
 }

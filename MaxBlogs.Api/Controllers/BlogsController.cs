@@ -1,4 +1,6 @@
-﻿using MaxBlogs.Application.CQRS.Blogs.Commands.Create;
+﻿using Common.FluentResults.Errors;
+using MaxBlogs.Application.CQRS.Blogs.Commands.Create;
+using MaxBlogs.Application.CQRS.Blogs.Queries.GetById;
 using MaxBlogs.Contracts.Blogs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -31,8 +33,34 @@ public class BlogsController : ControllerBase
             return BadRequest(result.Errors.FirstOrDefault()?.Message);
         }
 
-        var response = new CreateBlogResponse(result.Value);
+        var response = new CreateBlogResponse(result.Value.Id);
 
         return Ok(response);
+    }
+
+    [HttpGet("{blogId:guid}")]
+    public async Task<IActionResult> CreateBlogAsync(Guid blogId, CancellationToken cancellationToken)
+    {
+        _logger.LogInformation("Recieved request to Get a blog {blogId}", blogId);
+
+        var blogRequest = new GetBlogById(blogId);
+
+        var result = await _mediator.Send(blogRequest, cancellationToken);
+        if (result.IsFailed)
+        {
+            if (result.HasError<NotFoundError>())
+            {
+                return new NotFoundObjectResult(result.Errors);
+            }
+
+            if (result.HasError<ValidationError>())
+            {
+                return BadRequest(result.Errors);
+            }
+
+            return BadRequest(result.Errors);
+        }
+
+        return Ok(result.Value);
     }
 }
