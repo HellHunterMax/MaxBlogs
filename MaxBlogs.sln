@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Api", "MaxBlogs.Api\MaxBlogs.Api.csproj", "{C7CFCFD1-611E-4F43-8CB8-BD9A7742B01E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxBlogs.Api", "MaxBlogs.Api\MaxBlogs.Api.csproj", "{C7CFCFD1-611E-4F43-8CB8-BD9A7742B01E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Domain", "MaxBlogs.Domain\MaxBlogs.Domain.csproj", "{67CFDD00-AAA1-4AFE-9446-37036169E680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxBlogs.Domain", "MaxBlogs.Domain\MaxBlogs.Domain.csproj", "{67CFDD00-AAA1-4AFE-9446-37036169E680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Application", "MaxBlogs.Application\MaxBlogs.Application.csproj", "{F4FA7F9A-F889-4DC8-8E46-D862C69550BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxBlogs.Application", "MaxBlogs.Application\MaxBlogs.Application.csproj", "{F4FA7F9A-F889-4DC8-8E46-D862C69550BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Infrastructure", "MaxBlogs.Infrastructure\MaxBlogs.Infrastructure.csproj", "{6111CD3B-B207-4C0A-B726-7612667B7A7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxBlogs.Infrastructure", "MaxBlogs.Infrastructure\MaxBlogs.Infrastructure.csproj", "{6111CD3B-B207-4C0A-B726-7612667B7A7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http calls", "http calls", "{D07CE3E8-B4BC-4E09-8BCF-9CE6A61272BE}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,17 +22,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Contracts", "MaxBlogs.Contracts\MaxBlogs.Contracts.csproj", "{DCE4BA8D-07DA-4F59-AEFD-95BCB7F6D442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxBlogs.Contracts", "MaxBlogs.Contracts\MaxBlogs.Contracts.csproj", "{DCE4BA8D-07DA-4F59-AEFD-95BCB7F6D442}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{27CCC4C8-EA7B-44BE-9425-1C6708FFEFBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Application.UnitTests", "UnitTests\MaxBlogs.Application.UnitTests\MaxBlogs.Application.UnitTests.csproj", "{83C1BC13-0A36-46CF-9E72-70E8F9A7A456}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxBlogs.Application.UnitTests", "UnitTests\MaxBlogs.Application.UnitTests\MaxBlogs.Application.UnitTests.csproj", "{83C1BC13-0A36-46CF-9E72-70E8F9A7A456}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{09BCC021-A6AA-45DF-9769-5F9F6456BA8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.UnitTestsC", "Common.UnitTests\Common.UnitTestsC.csproj", "{D2A81E29-25FB-435A-AFF9-EBE3477065E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxBlogs.Api.UnitTests", "UnitTests\MaxBlogs.Api.UnitTests\MaxBlogs.Api.UnitTests.csproj", "{12805EB2-5C65-41BF-90AE-E0CF46C1DF06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxBlogs.Api.UnitTests", "UnitTests\MaxBlogs.Api.UnitTests\MaxBlogs.Api.UnitTests.csproj", "{12805EB2-5C65-41BF-90AE-E0CF46C1DF06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.FluentResults", "Common\Common.FluentResults\Common.FluentResults.csproj", "{3DFBE1B3-0ACD-4524-8F5D-0F23431212D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.UnitTestsC", "Common\Common.UnitTests\Common.UnitTestsC.csproj", "{250D31DD-0C31-41F9-8831-F5C76A5C0CB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,22 +66,27 @@ Global
 		{83C1BC13-0A36-46CF-9E72-70E8F9A7A456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83C1BC13-0A36-46CF-9E72-70E8F9A7A456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83C1BC13-0A36-46CF-9E72-70E8F9A7A456}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2A81E29-25FB-435A-AFF9-EBE3477065E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2A81E29-25FB-435A-AFF9-EBE3477065E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2A81E29-25FB-435A-AFF9-EBE3477065E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2A81E29-25FB-435A-AFF9-EBE3477065E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12805EB2-5C65-41BF-90AE-E0CF46C1DF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12805EB2-5C65-41BF-90AE-E0CF46C1DF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12805EB2-5C65-41BF-90AE-E0CF46C1DF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12805EB2-5C65-41BF-90AE-E0CF46C1DF06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DFBE1B3-0ACD-4524-8F5D-0F23431212D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DFBE1B3-0ACD-4524-8F5D-0F23431212D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DFBE1B3-0ACD-4524-8F5D-0F23431212D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DFBE1B3-0ACD-4524-8F5D-0F23431212D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250D31DD-0C31-41F9-8831-F5C76A5C0CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250D31DD-0C31-41F9-8831-F5C76A5C0CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250D31DD-0C31-41F9-8831-F5C76A5C0CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250D31DD-0C31-41F9-8831-F5C76A5C0CB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{83C1BC13-0A36-46CF-9E72-70E8F9A7A456} = {27CCC4C8-EA7B-44BE-9425-1C6708FFEFBB}
-		{D2A81E29-25FB-435A-AFF9-EBE3477065E3} = {09BCC021-A6AA-45DF-9769-5F9F6456BA8A}
 		{12805EB2-5C65-41BF-90AE-E0CF46C1DF06} = {27CCC4C8-EA7B-44BE-9425-1C6708FFEFBB}
+		{3DFBE1B3-0ACD-4524-8F5D-0F23431212D7} = {09BCC021-A6AA-45DF-9769-5F9F6456BA8A}
+		{250D31DD-0C31-41F9-8831-F5C76A5C0CB0} = {09BCC021-A6AA-45DF-9769-5F9F6456BA8A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F8B082C-3C05-4F52-AC03-9585AE3DA06F}

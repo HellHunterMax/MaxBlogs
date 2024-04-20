@@ -2,7 +2,4 @@
   <ItemGroup>
     <PackageReference Include="FluentResults" Version="3.15.2" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\Common.FluentResults\Common.FluentResults.csproj" />
-  </ItemGroup>
 </Project>
