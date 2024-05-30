@@ -14,6 +14,7 @@ public static class ModuleExtensions
         options.UseSqlite("Data Source = MaxBlogs.db"));
 
         services.AddScoped<IBlogsRepository, BlogsRepository>();
+        services.AddScoped<IUnitOfWork>(serviceProvider => serviceProvider.GetRequiredService<BlogsDBContext>());
         return services;
     }
 }

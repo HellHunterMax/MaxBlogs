@@ -7,12 +7,12 @@ namespace MaxBlogs.Application.CQRS.Blogs.Commands.Create;
 internal class CreateBlogHandler : IRequestHandler<CreateBlog, Result<Blog>>
 {
     private readonly IBlogsRepository _blogsRepository;
-    //private readonly IUnitOfWork _unitOfWork;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public CreateBlogHandler(IBlogsRepository blogsRepository)
+    public CreateBlogHandler(IBlogsRepository blogsRepository, IUnitOfWork unitOfWork)
     {
         _blogsRepository = blogsRepository;
-        //_unitOfWork = unitOfWork;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<Result<Blog>> Handle(CreateBlog request, CancellationToken cancellationToken)
@@ -25,7 +25,7 @@ internal class CreateBlogHandler : IRequestHandler<CreateBlog, Result<Blog>>
         }
 
         await _blogsRepository.AddBlogAsync(blogResult.Value);
-        //await _unitOfWork.CommitChangesAsync();
+        await _unitOfWork.CommitChangesAsync();
 
         return blogResult;
     }

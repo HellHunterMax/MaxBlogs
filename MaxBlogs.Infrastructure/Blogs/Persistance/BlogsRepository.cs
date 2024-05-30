@@ -16,7 +16,6 @@ internal class BlogsRepository : IBlogsRepository
     public async Task AddBlogAsync(Blog blog)
     {
         await _context.Blogs.AddAsync(blog);
-        await _context.SaveChangesAsync();
     }
 
     public async Task<Blog?> GetBlogByIdAsync(Guid id)
