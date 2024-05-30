@@ -3,6 +3,7 @@
     <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.FluentResults\Common.FluentResults.csproj" />
     <ProjectReference Include="..\MaxBlogs.Domain\MaxBlogs.Domain.csproj" />
   </ItemGroup>
 

@@ -38,6 +38,6 @@
 
   <!-- Project references for unittest projects -->
   <ItemGroup Condition="$(MSBuildProjectName.EndsWith('UnitTests'))">
-    <ProjectReference Include="..\..\Common.UnitTests\Common.UnitTestsC.csproj" />
+    <ProjectReference Include="..\..\Common\Common.UnitTests\Common.UnitTestsC.csproj" />
   </ItemGroup>
 </Project>

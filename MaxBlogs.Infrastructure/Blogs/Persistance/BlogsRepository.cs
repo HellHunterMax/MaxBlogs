@@ -23,8 +23,19 @@ internal class BlogsRepository : IBlogsRepository
         return await _context.Blogs.FirstOrDefaultAsync(x => x.Id == id);
     }
 
+    public Task<IEnumerable<Blog>> GetBlogsAsync(Func<Blog, bool> predicate)
+    {
+        return Task.Run(() => _context.Blogs.Where(predicate));
+    }
+
     public async Task<IEnumerable<Blog>> GetForAuthorAsync(Guid authorId)
     {
         return await _context.Blogs.Where(x => x.AuthorId == authorId).ToListAsync();
+    }
+
+    public Task DeleteAsync(Blog blog)
+    {
+        _context.Blogs.Remove(blog);
+        return Task.CompletedTask;
     }
 }
