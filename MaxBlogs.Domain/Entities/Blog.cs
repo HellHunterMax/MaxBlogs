@@ -5,9 +5,9 @@ using MaxBlogs.Domain.Entities.Base;
 namespace MaxBlogs.Domain.Entities;
 public class Blog : Entity
 {
-    public string Title { get; set; }
-    public string Text { get; set; }
-    public Guid AuthorId { get; set; }
+    public string Title { get; private set; }
+    public string Text { get; private set; }
+    public Guid AuthorId { get; private set; }
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     private Blog() { }
