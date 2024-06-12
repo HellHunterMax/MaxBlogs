@@ -9,3 +9,7 @@ The presentation layer should translate what it has recieved into a language tha
 
 ## project References
 Only has a reference to Infrastructure to be able to inject tje services.
+
+## Error handling
+- Convert Application/Domain error to application error (depending on the presentation used)
+- 

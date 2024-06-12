@@ -1,11 +1,16 @@
-﻿using Common.FluentResults.Errors.ErrorCodes;
+﻿using Common.FluentResults.Errors.Enums;
+using Common.FluentResults.Errors.ErrorCodes;
 using FluentResults;
 
 namespace Common.FluentResults.Errors;
 
-public class BaseError : Error
+public abstract class BaseError : Error
 {
-    protected BaseError(IErrorCode code, string message) : base($"{code.Code}: {message}")
+    public ErrorCode Code { get; }
+    public abstract ErrorType ErrorType { get; }
+
+    protected BaseError(ErrorCode code, string message) : base($"{code.Code}: {message}")
     {
+        Code = code;
     }
 }

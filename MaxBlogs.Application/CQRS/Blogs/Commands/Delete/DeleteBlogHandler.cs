@@ -28,8 +28,7 @@ public record DeleteBlogHandler : IRequestHandler<DeleteBlog, Result>
 
         if (blog.AuthorId != request.UserId)
         {
-            //TODO common applicationError?
-            return Result.Fail("User is not allowed to remove a Blog that is not the Author of.");
+            return NotAllowedError.NotAllowed(request.UserId, $"Delete blog '{blog.Id}' who its not owner of.");
         }
 
         await _blogsRepository.DeleteAsync(blog);

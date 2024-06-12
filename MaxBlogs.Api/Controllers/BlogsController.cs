@@ -1,5 +1,5 @@
-﻿using Common.FluentResults.Errors;
-using MaxBlogs.Application.CQRS.Blogs.Commands.Create;
+﻿using MaxBlogs.Application.CQRS.Blogs.Commands.Create;
+using MaxBlogs.Application.CQRS.Blogs.Commands.Delete;
 using MaxBlogs.Application.CQRS.Blogs.Queries.GetById;
 using MaxBlogs.Contracts.Blogs;
 using MediatR;
@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MaxBlogs.Api.Controllers;
 
-[ApiController]
 [Route("[Controller]")]
-public class BlogsController : ControllerBase
+public class BlogsController : CustomControllerBase
 {
     private readonly ILogger<BlogsController> _logger;
     private readonly ISender _mediator;
@@ -30,7 +29,7 @@ public class BlogsController : ControllerBase
         var result = await _mediator.Send(createBlogRequest, cancellationToken);
         if (result.IsFailed)
         {
-            return BadRequest(result.Errors.FirstOrDefault()?.Message);
+            return Problem(result);
         }
 
         var response = new CreateBlogResponse(result.Value.Id);
@@ -39,7 +38,7 @@ public class BlogsController : ControllerBase
     }
 
     [HttpGet("{blogId:guid}")]
-    public async Task<IActionResult> CreateBlogAsync(Guid blogId, CancellationToken cancellationToken)
+    public async Task<IActionResult> GetBlogAsync(Guid blogId, CancellationToken cancellationToken)
     {
         _logger.LogInformation("Recieved request to Get a blog {blogId}", blogId);
 
@@ -48,19 +47,23 @@ public class BlogsController : ControllerBase
         var result = await _mediator.Send(blogRequest, cancellationToken);
         if (result.IsFailed)
         {
-            if (result.HasError<NotFoundError>())
-            {
-                return new NotFoundObjectResult(result.Errors);
-            }
-
-            if (result.HasError<ValidationError>())
-            {
-                return BadRequest(result.Errors);
-            }
-
-            return BadRequest(result.Errors);
+            return Problem(result);
         }
 
         return Ok(result.Value);
+    }
+
+    [HttpDelete("{blogId:guid}")]
+    public async Task<IActionResult> DeleteBlogAsync(Guid blogId, Guid userId, CancellationToken cancellationToken)
+    {
+        var deleteBlogRequst = new DeleteBlog(blogId, userId);
+
+        var result = await _mediator.Send(deleteBlogRequst, cancellationToken);
+        if (result.IsFailed)
+        {
+            return Problem(result);
+        }
+
+        return NoContent();
     }
 }
