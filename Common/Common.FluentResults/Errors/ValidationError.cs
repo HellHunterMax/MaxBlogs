@@ -1,10 +1,14 @@
-﻿namespace Common.FluentResults.Errors;
+﻿using Common.FluentResults.Errors.Enums;
+
+namespace Common.FluentResults.Errors;
 
 public class ValidationError : BaseError
 {
     public ValidationError(string message) : base(Constants.ErrorCodes.NullOrEmpty, message)
     {
     }
+
+    public override ErrorType ErrorType => ErrorType.Validation;
 
     public static ValidationError CannotBeNull<T>(string name)
     {
