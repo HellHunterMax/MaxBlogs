@@ -2,7 +2,7 @@
 using FluentResults;
 using MaxBlogs.Domain.Entities.Base;
 
-namespace MaxBlogs.Domain.Entities;
+namespace MaxBlogs.Domain.Blogs;
 public class Blog : Entity
 {
     public string Title { get; private set; }

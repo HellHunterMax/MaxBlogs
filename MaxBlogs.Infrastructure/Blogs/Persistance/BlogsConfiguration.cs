@@ -1,4 +1,4 @@
-﻿using MaxBlogs.Domain.Entities;
+﻿using MaxBlogs.Domain.Blogs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

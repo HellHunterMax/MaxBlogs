@@ -1,4 +1,4 @@
-﻿using MaxBlogs.Domain.Entities;
+﻿using MaxBlogs.Domain.Blogs;
 
 namespace MaxBlogs.Application.Common.Interfaces;
 

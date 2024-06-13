@@ -3,7 +3,7 @@ using MaxBlogs.Api.Controllers;
 using MaxBlogs.Api.UnitTests.Attributes;
 using MaxBlogs.Application.CQRS.Blogs.Commands.Create;
 using MaxBlogs.Contracts.Blogs;
-using MaxBlogs.Domain.Entities;
+using MaxBlogs.Domain.Blogs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;

@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 using MaxBlogs.Application.Common.Interfaces;
-using MaxBlogs.Domain.Entities;
+using MaxBlogs.Domain.Blogs;
 using MediatR;
 
 namespace MaxBlogs.Application.CQRS.Blogs.Commands.Create;

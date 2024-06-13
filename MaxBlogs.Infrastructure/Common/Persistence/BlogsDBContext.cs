@@ -1,5 +1,5 @@
 ﻿using MaxBlogs.Application.Common.Interfaces;
-using MaxBlogs.Domain.Entities;
+using MaxBlogs.Domain.Blogs;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
