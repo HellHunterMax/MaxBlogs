@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MaxBlogs.Application;
 
@@ -10,6 +11,8 @@ public static class ModuleExtensions
         {
             options.RegisterServicesFromAssemblyContaining(typeof(ModuleExtensions));
         });
+
+        services.AddValidatorsFromAssemblyContaining(typeof(ModuleExtensions));
 
         return services;
     }

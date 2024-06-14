@@ -4,7 +4,7 @@ namespace Common.FluentResults.Errors;
 
 public class ValidationError : BaseError
 {
-    public ValidationError(string message) : base(Constants.ErrorCodes.NullOrEmpty, message)
+    public ValidationError(string message) : base(Constants.ErrorCodes.Vallidation, message)
     {
     }
 

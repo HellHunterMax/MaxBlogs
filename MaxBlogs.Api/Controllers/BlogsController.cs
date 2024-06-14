@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MaxBlogs.Api.Controllers;
 
-[Route("[Controller]")]
+[Route("blogs")]
 public class BlogsController : CustomControllerBase
 {
     private readonly ILogger<BlogsController> _logger;
@@ -54,9 +54,9 @@ public class BlogsController : CustomControllerBase
     }
 
     [HttpDelete("{blogId:guid}")]
-    public async Task<IActionResult> DeleteBlogAsync(Guid blogId, Guid userId, CancellationToken cancellationToken)
+    public async Task<IActionResult> DeleteBlogAsync(DeleteRequest request, Guid blogId, CancellationToken cancellationToken)
     {
-        var deleteBlogRequst = new DeleteBlog(blogId, userId);
+        var deleteBlogRequst = new DeleteBlog(blogId, request.UserId);
 
         var result = await _mediator.Send(deleteBlogRequst, cancellationToken);
         if (result.IsFailed)
@@ -66,4 +66,6 @@ public class BlogsController : CustomControllerBase
 
         return NoContent();
     }
+
+    public record DeleteRequest(Guid UserId);
 }

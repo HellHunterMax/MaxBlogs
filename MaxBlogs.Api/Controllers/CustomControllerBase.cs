@@ -9,7 +9,7 @@ namespace MaxBlogs.Api.Controllers;
 [ApiController]
 public class CustomControllerBase : ControllerBase
 {
-    public IActionResult Problem(Result result)
+    protected IActionResult Problem(Result result)
     {
         if (result.Errors.Count == 0)
         {
@@ -24,7 +24,7 @@ public class CustomControllerBase : ControllerBase
         return Problem((BaseError)result.Errors[0]);
     }
 
-    public IActionResult Problem<T>(Result<T> result)
+    protected IActionResult Problem<T>(Result<T> result)
     {
         if (result.Errors.Count == 0)
         {
@@ -39,7 +39,7 @@ public class CustomControllerBase : ControllerBase
         return Problem((BaseError)result.Errors[0]);
     }
 
-    public IActionResult Problem(BaseError error)
+    protected IActionResult Problem(BaseError error)
     {
         var statusCode = error.ErrorType switch
         {
@@ -52,7 +52,7 @@ public class CustomControllerBase : ControllerBase
         return Problem(statusCode: statusCode, detail: error.Message);
     }
 
-    public IActionResult ValidationProblem(List<IError> errors)
+    protected IActionResult ValidationProblem(List<IError> errors)
     {
         var modelStateDictionary = new ModelStateDictionary();
 

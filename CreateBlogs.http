@@ -1,11 +1,22 @@
 @host=https://localhost:7297
 @UserId="3fa85f64-5717-4562-b3fc-2c963f66afa6"
 
+//Invallid Call
 POST {{host}}/Blogs
 Content-Type: application/json
 
 {
   "userId": {{UserId}},
-  "title": "Blog 1",
-  "text": "this is the text of the blog"
+  "title": "",
+  "text": ""
+}
+
+//Valid Call
+POST {{host}}/Blogs
+Content-Type: application/json
+
+{
+  "userId": {{UserId}},
+  "title": "GoodTitle 1",
+  "text": "this is some text for a Blog"
 }

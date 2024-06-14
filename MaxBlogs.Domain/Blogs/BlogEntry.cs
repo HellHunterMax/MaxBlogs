@@ -5,6 +5,4 @@ public class BlogEntry : Entity
 {
     public required string Title { get; set; }
     public required string Text { get; set; }
-    //TODO comments?
-
 }

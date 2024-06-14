@@ -1,0 +1,10 @@
+@host=https://localhost:7297
+@UserId=8fc613c4-648a-442d-99b9-181f798c4671
+@blogId=789cbea6-1168-4c31-a012-57e89f5e43b6
+
+DELETE {{host}}/Blogs/{{blogId}}
+Content-Type: application/json
+
+{
+  "userId": "{{UserId}}"
+}

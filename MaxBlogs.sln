@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http calls", "http calls", "{D07CE3E8-B4BC-4E09-8BCF-9CE6A61272BE}"
 	ProjectSection(SolutionItems) = preProject
 		CreateBlogs.http = CreateBlogs.http
+		DeleteBlog.http = DeleteBlog.http
 		GetBlog.http = GetBlog.http
 	EndProjectSection
 EndProject
