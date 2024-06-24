@@ -27,6 +27,6 @@ internal class CreateBlogHandler : IRequestHandler<CreateBlog, Result<Blog>>
         await _blogsRepository.AddBlogAsync(blogResult.Value);
         await _unitOfWork.CommitChangesAsync();
 
-        return blogResult;
+        return blogResult.Value;
     }
 }

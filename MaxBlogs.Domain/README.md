@@ -29,3 +29,6 @@ Start building from domain.
 ## Error handling
 - invariants. Object validation errors. DDD Business rules (user can only have 1 of something depending on state of the user)
 - Has a set of defined Errors that can be referenced so the layers that use this layer know what to expect.
+
+## Domain Events pattern
+

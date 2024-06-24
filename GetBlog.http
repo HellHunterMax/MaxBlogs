@@ -1,4 +1,4 @@
 @host=https://localhost:7297
-@blogId=789CBEA6-1168-4C31-A012-57E89F5E43B6
+@blogId=D50A027C-2FAA-42FB-A4F0-0A2A3D6C01AB
 
 GET {{host}}/Blogs/{{blogId}}

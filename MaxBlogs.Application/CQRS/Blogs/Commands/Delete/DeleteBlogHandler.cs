@@ -26,7 +26,7 @@ public record DeleteBlogHandler : IRequestHandler<DeleteBlog, Result>
             return NotFoundError.NotFound<Blog>(request.Id.ToString(), nameof(blog.Id));
         }
 
-        if (blog.AuthorId != request.UserId)
+        if (blog.AuthorIds.Contains(request.UserId))
         {
             return NotAllowedError.NotAllowed(request.UserId, $"Delete blog '{blog.Id}' who its not owner of.");
         }

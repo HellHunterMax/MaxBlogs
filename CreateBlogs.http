@@ -1,5 +1,5 @@
 @host=https://localhost:7297
-@UserId="3fa85f64-5717-4562-b3fc-2c963f66afa6"
+@UserId="42c9bc1c-57e8-4126-a8f6-f55ac733f8e3"
 
 #Invallid Call
 POST {{host}}/Blogs
@@ -19,6 +19,6 @@ Content-Type: application/json
 
 {
   "userId": {{UserId}},
-  "title": "GoodTitle 2",
+  "title": "GoodTitle 1",
   "text": "this is some text for a Blog"
 }

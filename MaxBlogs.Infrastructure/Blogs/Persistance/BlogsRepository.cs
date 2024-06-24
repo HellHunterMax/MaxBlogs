@@ -30,7 +30,7 @@ internal class BlogsRepository : IBlogsRepository
 
     public async Task<IEnumerable<Blog>> GetForAuthorAsync(Guid authorId)
     {
-        return await _context.Blogs.Where(x => x.AuthorId == authorId).ToListAsync();
+        return await _context.Blogs.Where(x => x.AuthorIds.Contains(authorId)).ToListAsync();
     }
 
     public Task DeleteAsync(Blog blog)
