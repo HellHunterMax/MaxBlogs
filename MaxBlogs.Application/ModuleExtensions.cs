@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using MaxBlogs.Application.Common.Behaviors;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace MaxBlogs.Application;
@@ -10,6 +11,8 @@ public static class ModuleExtensions
         services.AddMediatR(options =>
         {
             options.RegisterServicesFromAssemblyContaining(typeof(ModuleExtensions));
+
+            options.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
 
         services.AddValidatorsFromAssemblyContaining(typeof(ModuleExtensions));
