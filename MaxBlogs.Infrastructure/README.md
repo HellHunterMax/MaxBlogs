@@ -15,3 +15,6 @@ This is your gateway to external stuff fe: Database, external Api's...
 
 # Databases
 When using entityFramework, you can use the IEntityTypeConfiguration and OnModelCreation (inside the context) To change what is saved to the database.
+
+# Sql Commands:
+- add-migration "name" -project MaxBlogs.Infrastructure
