@@ -32,3 +32,16 @@ Start building from domain.
 
 ## Domain Events pattern
 
+## What is an Entity
+"An entity has a Identity (Id)"
+
+Two Entities with the same Id IS the same Entity even if the other data is different
+
+## Aggregates
+"One or more Domain Objects that always need to stay consisten as a whole"
+
+### Aggregate root
+Every aggregate holds a Aggregate root which is the Root of the Aggregate
+
+### Common Entity
+A Entity that is shared over multiple Aggregates ia a Common Entity

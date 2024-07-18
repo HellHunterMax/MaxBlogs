@@ -43,7 +43,7 @@ public class CustomControllerBase : ControllerBase
     {
         var statusCode = error.ErrorType switch
         {
-            ErrorType.NotAllowed => StatusCodes.Status401Unauthorized,
+            ErrorType.NotAllowed => StatusCodes.Status403Forbidden,
             ErrorType.NotFound => StatusCodes.Status404NotFound,
             ErrorType.Unexpected => StatusCodes.Status500InternalServerError,
             ErrorType.Validation => StatusCodes.Status400BadRequest,

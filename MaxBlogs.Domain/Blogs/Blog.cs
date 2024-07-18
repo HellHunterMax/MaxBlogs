@@ -1,9 +1,10 @@
 ﻿using Common.FluentResults.Errors;
 using FluentResults;
-using MaxBlogs.Domain.Entities.Base;
+using MaxBlogs.Domain.Blogs.Errors;
+using MaxBlogs.Domain.Common;
 
 namespace MaxBlogs.Domain.Blogs;
-public class Blog : Entity
+public class Blog : AggregateRoot
 {
     public string Title { get; private set; }
     public string Text { get; private set; }
@@ -11,10 +12,10 @@ public class Blog : Entity
     public List<Guid> BlogEntryIds { get; private set; } = [];
 
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-    private Blog() { }
+    private Blog() : base() { }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
-    public Blog(string title, string text) : base()
+    public Blog(string title, string text, Guid? id = null) : base(id ?? Guid.NewGuid())
     {
         Title = !string.IsNullOrEmpty(title) ? title : throw new ArgumentNullException(title, $"Blog: {nameof(Title)} should not be null or empty");
         Text = !string.IsNullOrEmpty(text) ? text : throw new ArgumentNullException(text, $"Blog: {nameof(Text)} should not be null or empty");
@@ -43,7 +44,7 @@ public class Blog : Entity
     {
         if (AuthorIds.Contains(authorId))
         {
-            return Result.Ok();
+            return BlogErrors.AuthorAlreadyBlogAuthorError(authorId, Id);
         }
 
         AuthorIds.Add(authorId);

@@ -1,5 +1,5 @@
 ﻿using MaxBlogs.Domain.Blogs;
-using MaxBlogs.Domain.Entities.Base;
+using MaxBlogs.Domain.Common;
 
 namespace MaxBlogs.Domain.Users;
 

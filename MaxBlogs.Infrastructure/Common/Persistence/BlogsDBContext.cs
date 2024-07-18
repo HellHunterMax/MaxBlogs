@@ -1,4 +1,5 @@
 ﻿using MaxBlogs.Application.Common.Interfaces;
+using MaxBlogs.Domain.BlogEntries;
 using MaxBlogs.Domain.Blogs;
 using MaxBlogs.Domain.Users;
 using Microsoft.EntityFrameworkCore;
