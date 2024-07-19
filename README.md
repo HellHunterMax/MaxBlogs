@@ -82,3 +82,14 @@ From your Ubiquitous language you can find your domain objects
 ### example
 
 - a player can only play 2 games
+
+## Context map patterns
+- Open-Host Service (Contracts)
+- Conformist (implements the Contracts)
+- Anti-Corruption Layer ()
+- Shared Kernel (domain models are shared between contexts)
+- Partnetship
+- Customer-Supplier
+- Published language (specification)
+- Seperate Ways (2 bounded contexts that have little to no effect on eachother)
+- Big ball of Mud (old legacy system)

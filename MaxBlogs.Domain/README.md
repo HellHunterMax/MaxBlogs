@@ -6,10 +6,7 @@ Start building from domain.
 - Executing business logic
 - Enforcing business rules
 
-
-
 # Domain-Driven Design
-
 ## domain model
 - A domain model holds both Data and behavior
 
@@ -50,7 +47,7 @@ Two Entities with the same Id IS the same Entity even if the other data is diffe
 Every aggregate holds a Aggregate root which is the Root of the Aggregate
 
 ### Common Entity
-A Entity that is shared over multiple Aggregates ia a Common Entity
+A Entity that is shared over multiple Aggregates is a Common Entity
 
 
 ## Domain Services
@@ -58,3 +55,4 @@ A Entity that is shared over multiple Aggregates ia a Common Entity
 
 sidenot: sometimes seen as a flaw in the domain design.
 Maybe you need a new aggregate to encapsulate the logic or requirement.
+https://enterprisecraftsmanship.com/posts/domain-vs-application-services/
